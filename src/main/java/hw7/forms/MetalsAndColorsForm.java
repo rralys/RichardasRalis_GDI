@@ -5,6 +5,7 @@ import com.epam.jdi.light.elements.complex.Droplist;
 import com.epam.jdi.light.elements.composite.Form;
 import com.epam.jdi.light.elements.pageobjects.annotations.objects.JDropdown;
 import com.epam.jdi.light.elements.pageobjects.annotations.simple.XPath;
+import com.epam.jdi.light.ui.html.common.Button;
 import com.epam.jdi.light.ui.html.complex.RadioButtons;
 import hw7.entities.MetalsAndColorsData;
 
@@ -30,6 +31,10 @@ public class MetalsAndColorsForm extends Form<MetalsAndColorsData> {
             list = "li",
             expand = ".caret")
     private Droplist vegetables;
+
+    @XPath("//button[@id='submit-button']")
+    private Button submit;
+
 
     public void setSummary(MetalsAndColorsData mcd) {
         for (Integer item : mcd.getSummary()) {
@@ -65,6 +70,10 @@ public class MetalsAndColorsForm extends Form<MetalsAndColorsData> {
         setColors(mcd);
         setMetals(mcd);
         setVegetables(mcd);
+    }
+
+    public void submitMetalsAndColorsForm() {
+        submit.click();
     }
 
 }

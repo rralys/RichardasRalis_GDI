@@ -2,29 +2,24 @@ package hw7.pages;
 
 import com.epam.jdi.light.elements.composite.WebPage;
 import com.epam.jdi.light.elements.pageobjects.annotations.simple.XPath;
-import com.epam.jdi.light.ui.html.common.Button;
 import com.epam.jdi.light.ui.html.common.Text;
 import hw7.entities.MetalsAndColorsData;
 import hw7.forms.MetalsAndColorsForm;
 import org.hamcrest.Matchers;
 
-import java.awt.*;
-
 public class MetalsAndColorsPage extends WebPage {
 
-    // TODO Same story about naming, TestPage:line_21
-    MetalsAndColorsForm mcf;
+    // TODO Same story about naming, JDISite:line_21 — Fixed.
+    MetalsAndColorsForm metalsAndColorsForm;
 
-    // TODO In most cases, submit button should be a part of a form.
-    @XPath("//button[@id='submit-button']")
-    private Button submit;
+    // TODO In most cases, submit button should be a part of a form. — Fixed.
 
     @XPath("//div[@class='info-panel-body info-panel-body-result']")
     private Text results;
 
     public void submitMetalsAndColorsForm(MetalsAndColorsData mcd) {
-        mcf.setMetalsAndColorsForm(mcd);
-        submit.click();
+        metalsAndColorsForm.setMetalsAndColorsForm(mcd);
+        metalsAndColorsForm.submitMetalsAndColorsForm();
     }
 
     public void verifyResultsSectionContainsSubmittedData(MetalsAndColorsData mcd) {

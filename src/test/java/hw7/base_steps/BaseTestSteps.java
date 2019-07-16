@@ -1,14 +1,14 @@
 package hw7.base_steps;
 
 import com.epam.jdi.light.driver.get.DriverData;
-import hw7.TestPage;
+import hw7.JDISite;
 import hw7.entities.MetalsAndColorsData;
 import hw7.entities.Users;
 import org.hamcrest.Matchers;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
 
 import java.util.Arrays;
 
@@ -23,23 +23,28 @@ public class BaseTestSteps {
             "Selen",
             Arrays.asList("Cucumber", "Tomato"));
 
+/*
     @BeforeMethod
     public void startUp() {
-        // TODO 1. This code should not be here, we should apply this settings to the whole suite at once
-        // TODO 2. In this case it is not the best idea to make lambda exp with closure, read this article briefly:
+        // TODO 1. This code should not be here, we should apply this settings to the whole suite at once — Fixed.
+        // TODO 2. In this case it is not the best idea to make lambda exp with closure, read this article briefly: — Fixed.
         // https://habr.com/ru/company/piter/blog/281026/
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--no-sandbox", "start-maximized");
-        DriverData.CHROME_OPTIONS = () -> {return options;};
 
-        initElements(TestPage.class);
-        // !TODO 1
+        // !TODO 1 — Fixed.
 
-        TestPage.openHomePage();
-        TestPage.homePage.shouldBeOpened();
-        TestPage.homePage.loginUser(Users.PITER);
-        TestPage.homePage.getUserName().shouldBe().text(Matchers.equalTo(Users.PITER.getName()));
-        TestPage.homePage.openMetalsAndColorsPage();
+
+    }
+*/
+
+    @BeforeClass
+    public void setUp() {
+
+        DriverData.CHROME_OPTIONS = () -> {
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--no-sandbox", "start-maximized");
+            return options;};
+
+        initElements(JDISite.class);
     }
 
     @AfterMethod
