@@ -8,6 +8,7 @@ import org.hamcrest.Matchers;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 
 import java.util.Arrays;
 
@@ -24,11 +25,15 @@ public class BaseTestSteps {
 
     @BeforeMethod
     public void startUp() {
+        // TODO 1. This code should not be here, we should apply this settings to the whole suite at once
+        // TODO 2. In this case it is not the best idea to make lambda exp with closure, read this article briefly:
+        // https://habr.com/ru/company/piter/blog/281026/
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox", "start-maximized");
         DriverData.CHROME_OPTIONS = () -> {return options;};
 
         initElements(TestPage.class);
+        // !TODO 1
 
         TestPage.openHomePage();
         TestPage.homePage.shouldBeOpened();
