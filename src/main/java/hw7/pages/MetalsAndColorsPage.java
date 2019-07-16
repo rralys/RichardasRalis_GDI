@@ -12,8 +12,10 @@ import java.awt.*;
 
 public class MetalsAndColorsPage extends WebPage {
 
+    // TODO Same story about naming, TestPage:line_21
     MetalsAndColorsForm mcf;
 
+    // TODO In most cases, submit button should be a part of a form.
     @XPath("//button[@id='submit-button']")
     private Button submit;
 
