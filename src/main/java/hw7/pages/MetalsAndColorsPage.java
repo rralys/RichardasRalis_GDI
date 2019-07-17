@@ -9,10 +9,7 @@ import org.hamcrest.Matchers;
 
 public class MetalsAndColorsPage extends WebPage {
 
-    // TODO Same story about naming, JDISite:line_21 — Fixed.
     MetalsAndColorsForm metalsAndColorsForm;
-
-    // TODO In most cases, submit button should be a part of a form. — Fixed.
 
     @XPath("//div[@class='info-panel-body info-panel-body-result']")
     private Text results;

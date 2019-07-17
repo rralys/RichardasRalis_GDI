@@ -23,19 +23,6 @@ public class BaseTestSteps {
             "Selen",
             Arrays.asList("Cucumber", "Tomato"));
 
-/*
-    @BeforeMethod
-    public void startUp() {
-        // TODO 1. This code should not be here, we should apply this settings to the whole suite at once — Fixed.
-        // TODO 2. In this case it is not the best idea to make lambda exp with closure, read this article briefly: — Fixed.
-        // https://habr.com/ru/company/piter/blog/281026/
-
-        // !TODO 1 — Fixed.
-
-
-    }
-*/
-
     @BeforeClass
     public void setUp() {
 
