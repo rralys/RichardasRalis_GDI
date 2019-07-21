@@ -2,9 +2,9 @@
 
 <suite name="Suite for the homework7">
 
-    <test name="homework7">
+    <test name="homework8">
         <classes>
-            <class name="hw7.TestSteps"></class>
+            <class name="hw8.TestStepsWithDataProvider"></class>
         </classes>
     </test>
 

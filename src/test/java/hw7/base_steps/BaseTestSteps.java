@@ -3,12 +3,8 @@ package hw7.base_steps;
 import com.epam.jdi.light.driver.get.DriverData;
 import hw7.JDISite;
 import hw7.entities.MetalsAndColorsData;
-import hw7.entities.Users;
-import org.hamcrest.Matchers;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.*;
 
 import java.util.Arrays;
 
@@ -23,7 +19,7 @@ public class BaseTestSteps {
             "Selen",
             Arrays.asList("Cucumber", "Tomato"));
 
-    @BeforeClass
+    @BeforeSuite
     public void setUp() {
 
         DriverData.CHROME_OPTIONS = () -> {
@@ -34,7 +30,7 @@ public class BaseTestSteps {
         initElements(JDISite.class);
     }
 
-    @AfterMethod
+    @AfterSuite
     public void tearDown() {
         killAllSeleniumDrivers();
     }

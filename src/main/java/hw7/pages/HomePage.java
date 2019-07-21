@@ -20,6 +20,9 @@ public class HomePage extends WebPage {
     @XPath("//ul[contains(@class,'uui-navigation')]//a[@href='metals-colors.html']")
     private Button metalsAndColors;
 
+    @XPath("//div[@class='logout']")
+    private Button logoutButton;
+
     public void loginUser(Users user) {
         userIcon.click();
         loginForm.loginUser(user);
@@ -31,5 +34,10 @@ public class HomePage extends WebPage {
 
     public void openMetalsAndColorsPage() {
         metalsAndColors.click();
+    }
+
+    public void logout() {
+        userIcon.click();
+        logoutButton.click();
     }
 }
