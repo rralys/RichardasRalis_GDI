@@ -23,13 +23,6 @@ public class TestDataProvider {
         Map<String, MetalsAndColorsData> dataMap = new Gson()
                 .fromJson(jsonData, new TypeToken<Map<String, MetalsAndColorsData>>(){}.getType());
 
-//        Object[][] data = new Object[dataMap.size()][1];
-//        int count = 0;
-//        for (String dataKey : dataMap.keySet()) {
-//            data[count][0] = dataMap.get(dataKey);
-//            count++;
-//        }
-//        return data;
         return dataMap.values().toArray();
     }
 }
