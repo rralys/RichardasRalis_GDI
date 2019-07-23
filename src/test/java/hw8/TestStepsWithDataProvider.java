@@ -13,9 +13,13 @@ public class TestStepsWithDataProvider extends BaseTestSteps {
         JDISite.openHomePage();
         JDISite.homePage.shouldBeOpened();
         JDISite.homePage.loginUser(Users.PITER);
+        // TODO This action should be encapsulate in PO method and parametrised by Users.PITER itself.
         JDISite.homePage.getUserName().shouldBe().text(Matchers.equalTo(Users.PITER.getName()));
+        // !TODO
+        // TODO What is the reason of two call of this method ?
         JDISite.homePage.openMetalsAndColorsPage();
         JDISite.homePage.openMetalsAndColorsPage();
+        // !TODO
         JDISite.metalsAndColorsPage.submitMetalsAndColorsForm(metalsAndColorsData);
         JDISite.metalsAndColorsPage.verifyResultsSectionContainsSubmittedData(metalsAndColorsData);
         JDISite.homePage.logout();
