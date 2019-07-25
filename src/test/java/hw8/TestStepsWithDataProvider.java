@@ -13,11 +13,8 @@ public class TestStepsWithDataProvider extends BaseTestSteps {
         JDISite.homePage.shouldBeOpened();
         JDISite.homePage.loginUser(Users.PITER);
         // TODO This action should be encapsulate in PO method and parametrised by Users.PITER itself. — Fixed.
-        JDISite.homePage.verifyUserName(Users.PITER.getName());
-        // !TODO
-        // TODO What is the reason of two call of this method ? — Removed the duplicated call.
+        JDISite.homePage.verifyUserName(Users.PITER);
         JDISite.homePage.openMetalsAndColorsPage();
-        // !TODO
         JDISite.metalsAndColorsPage.submitMetalsAndColorsForm(metalsAndColorsData);
         JDISite.metalsAndColorsPage.verifyResultsSectionContainsSubmittedData(metalsAndColorsData);
         JDISite.homePage.logout();
