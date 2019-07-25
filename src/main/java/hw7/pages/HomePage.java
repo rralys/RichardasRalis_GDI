@@ -33,8 +33,8 @@ public class HomePage extends WebPage {
         return userName;
     }
 
-    public void verifyUserName(String uName) {
-        userName.shouldBe().text(Matchers.equalTo(uName));
+    public void verifyUserName(Users user) {
+        userName.shouldBe().text(Matchers.equalTo(user.getName()));
     }
 
     public void openMetalsAndColorsPage() {
